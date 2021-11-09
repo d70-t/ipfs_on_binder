@@ -1,0 +1,10 @@
+#!/bin/bash
+
+IPFS_VERSION=0.10.0
+
+wget https://dist.ipfs.io/go-ipfs/v${IPFS_VERSION}/go-ipfs_v${IPFS_VERSION}_linux-amd64.tar.gz
+tar -xvzf go-ipfs_v${IPFS_VERSION}_linux-amd64.tar.gz
+pushd go-ipfs
+sudo bash install.sh
+sudo sysctl -w net.core.rmem_max=2500000
+popd

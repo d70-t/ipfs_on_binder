@@ -1,0 +1,8 @@
+xarray
+fsspec
+ipfsspec
+requests
+aiohttp
+zarr
+dask
+matplotlib
