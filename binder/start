@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PATH=$PATH:$HOME/go-ipfs
+ipfs init
+
+exec "$@"
