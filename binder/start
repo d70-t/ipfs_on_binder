@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# make ipfs command available
 export PATH=$PATH:$HOME/go-ipfs
+# set up local node
 ipfs init
+# start the daemon
+ipfs daemon 2>ipfs.log | grep -i -o -m1 'Daemon is ready' & tail -f --pid=$! ipfs.log
 
+# continue starting the jupyter server
 exec "$@"
